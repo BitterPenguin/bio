@@ -17,8 +17,6 @@ export default {
     ...mapGetters([
       'primaryNavigation'
     ])
-  },
-  mounted() {
   }
 }
 </script>
