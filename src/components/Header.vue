@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import {mapGetters} from 'vuex'
 
 export default {
   name: 'Header',
@@ -19,7 +19,6 @@ export default {
     ])
   },
   mounted() {
-    console.log(this.$store)
   }
 }
 </script>
