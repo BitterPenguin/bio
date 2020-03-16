@@ -1,12 +1,13 @@
-import Vuex from 'vuex'
 import Vue from 'vue'
-import moduleHeader from './header/module'
+import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+import cms from './cms/module'
+
 const store = new Vuex.Store({
   modules: {
-    a: moduleHeader
+    cms
   }
 })
 
