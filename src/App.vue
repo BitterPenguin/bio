@@ -1,26 +1,23 @@
 <template>
   <div id="app">
     <Header />
+    <Content />
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
+import Content from './components/Content.vue'
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Content
   }
 }
 </script>
 
-<style>
-#app {
-  color: #2c3e50;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  text-align: center;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
+<style lang="scss">
+  @import './styles/index';
 </style>

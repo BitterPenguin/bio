@@ -1,0 +1,35 @@
+.Hero {
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    padding-top: 100vh;
+    position: relative;
+    width: 100%;
+  }
+
+  &__image {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  &__content {
+    bottom: $padding;
+    max-width: 400px;
+    position: absolute;
+    right: $padding;
+    z-index: 1;
+
+    a {
+      display: inline-block;
+      padding-top: $gutter/4;  
+    }
+  }
+}

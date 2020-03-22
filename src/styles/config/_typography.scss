@@ -1,0 +1,127 @@
+html,
+body {
+  @include font('Ubuntu');
+  background-color: $background;
+  color: $text;
+  font-weight: 400;
+  height: 100%;
+}
+
+h1, .h1,
+h2, .h2 {
+  @include font('Raleway');
+  color: $text;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+h3,.h3
+h4,.h4
+h5,.h5
+h6,.h6 {
+  font-weight: 500;
+}
+
+h1, .h1 {
+  font-size: calcRem(24px);
+  line-height: calcRem(36px);
+
+  @include screen('tablet') {
+    font-size: calcRem(36px);
+    line-height: calcRem(48px); 
+  }
+}
+
+h2, .h2 {
+  font-size: calcRem(18px);
+  line-height: calcRem(24px);
+
+  @include screen('tablet') {
+    font-size: calcRem(30px);
+    line-height: calcRem(36px);
+  }
+}
+
+h3, .h3, .subheader {
+  font-size: calcRem(12px);
+  line-height: calcRem(24px);
+
+  @include screen('tablet') {
+    font-size: calcRem(14px);
+    line-height: calcRem(24px);
+  }
+}
+
+p {
+  font-size: calcRem(14px);
+  line-height: calcRem(20px);
+
+  &.quote {
+    @extend h1;
+  }
+
+  &.subscript {
+    font-size: calcRem(12px);
+    font-weight: 600;
+    line-height: calcRem(12px);
+  }
+}
+
+a {
+  color: $text;
+  position: relative;
+  text-decoration: none;
+
+  &:after,
+  &:before {
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    transition: width 0.3s ease-in-out;
+    width: 0;   
+  }
+  &:after {
+    left: 0;
+  }
+  &:before {
+    background-color: $text;
+    left: auto;
+    right: 0;
+  }
+
+  &:hover,
+  &:focus {
+    outline: 0;
+
+    &:after {
+      background-color: $text;
+      width: 100%;
+    }
+    &:before {
+      background-color: transparent;
+      width: 100%;
+    }
+  }
+}
+
+button, .btn {
+  @include font('Raleway');
+  background-color: $white;
+  border: 1px solid $text;
+  border-radius: 5px;
+  color: $text;
+  cursor: pointer;
+  font-size: calcRem(12px);
+  font-weight: 500;
+  letter-spacing: calcRem(0.8px);
+  padding: $gutter/2 $gutter;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+  }
+}

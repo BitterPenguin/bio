@@ -5,6 +5,16 @@ let getters = {
 
   primaryNavigation(state) {
     return state.header
+  },
+
+  primaryNavigationColor(state) {
+    return state.headerColor
+  },
+
+  getModules(state) {
+    const hero = state.modules.hero
+    const body = state.modules.body
+    return {hero, body}
   }
 }
 
