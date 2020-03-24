@@ -14,7 +14,7 @@
         @include font('Raleway');
         line-height: calcRem(60px);
         text-transform: uppercase;
-        transition: line-height 0.3s ease-in-out;
+        transition: line-height 0.3s ease-in-out, color 0.3s ease-in-out;
       }
     }
   }
@@ -24,6 +24,7 @@
 
     .Header__menu-item {
       a {
+        color: $text;
         line-height: calcRem(48px);
       }
     }

@@ -12,24 +12,29 @@
 
   &__image {
     bottom: 0;
-    height: 100%;
     left: 0;
+    min-height: 100%;
+    min-width: 100%;
     position: absolute;
     right: 0;
     top: 0;
-    width: 100%;
   }
 
   &__content {
     bottom: $padding;
-    max-width: 400px;
+    left: $gutter;
+    max-width: calc(100% - 2 * #{$gutter});
     position: absolute;
-    right: $padding;
     z-index: 1;
 
     a {
       display: inline-block;
       padding-top: $gutter/4;  
+    }
+
+    @include screen('tablet') {
+      max-width: 400px;
+      right: $padding;
     }
   }
 }

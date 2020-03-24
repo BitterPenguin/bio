@@ -1,10 +1,8 @@
 html,
 body {
   @include font('Ubuntu');
-  background-color: $background;
   color: $text;
   font-weight: 400;
-  height: 100%;
 }
 
 h1, .h1,

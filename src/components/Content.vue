@@ -1,42 +1,46 @@
 <template>
   <main id="Main">
-    <section class="Hero">
-      <img :src="getModules.hero[0].image.url" class="Hero__image">
-      <div class="Hero__content">
-          <h1
-            v-if="getModules.hero[0].header[0].text"
-            :style="{color: getModules.hero[0].text_color}">
-              {{getModules.hero[0].header[0].text}}
-          </h1>
+    <Hero :hero="getModules.hero[0]"/>
 
-          <p
-            v-if="getModules.hero[0].content[0].text"
-            :style="{color: getModules.hero[0].text_color}">
-              {{getModules.hero[0].content[0].text}}
-          </p>
-          <a
-            v-if="getModules.hero[0].link_url.url && getModules.hero[0].link_text"
-            :href="getModules.hero[0].link_url.url"
-            :style="{'--textColorVar': getModules.hero[0].text_color}">
-              {{getModules.hero[0].link_text}}
-          </a>
-      </div>
+    <section 
+      v-for="module in getModules.body"
+      :key="module.slice_type"
+      :class="sanitizeClass(module.slice_type)">
+        <Quote v-if="module.slice_type === 'quote'" :data="module"/>
+        <SoundCloud v-if="module.slice_type === 'soundcloud'" :data="module"/>
+        <Landscape v-if="module.slice_type === 'landscape_image'" :data="module"/>
+        <News v-if="module.slice_type === 'news'" :data="module"/>
     </section>
-
-    <!-- {{getModules.body}} -->
 
   </main>
 </template>
 
 <script>
 import {mapGetters} from 'vuex'
+import Hero from '../modules/hero'
+import Quote from '../modules/quote'
+import SoundCloud from '../modules/soundcloud'
+import Landscape from '../modules/landscape'
+import News from '../modules/news'
 
 export default {
   name: 'Content',
+  components: {
+    Hero,
+    Quote,
+    SoundCloud,
+    Landscape,
+    News
+  },
   computed: {
     ...mapGetters([
       'getModules'
     ])
+  },
+  methods: {
+    sanitizeClass: function(string) {
+      return (string.charAt(0).toUpperCase() + string.slice(1)).replace('_', '__')
+    }
   }
 }
 </script>

@@ -1,0 +1,10 @@
+.module {
+  margin: 0 auto;
+  max-width: 1600px;
+  padding: $padding $gutter 0;
+  transition: padding 0.3s ease-in-out;
+
+  @include screen('tablet') {
+    padding: $padding $padding 0;
+  }
+}

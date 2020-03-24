@@ -1,3 +1,9 @@
+body {
+  background-color: $background;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
 #Main {
   position: relative;
 }
