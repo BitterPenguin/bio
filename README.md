@@ -1,5 +1,7 @@
 # bio
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ee08bb09-87ec-4118-bf57-a0f31ce8eee0/deploy-status)](https://app.netlify.com/sites/gracious-neumann-29c1c5/deploys)
+
 ## Project setup
 ```
 npm install
