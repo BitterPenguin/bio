@@ -1,0 +1,44 @@
+.Landscape__image {
+  overflow: hidden;
+  position: relative;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  &-wrapper {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  &-content {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: calc(100% - (4 * #{$gutter}));
+    z-index: 2;
+
+    p {
+      @extend h2;
+    }
+
+    @include screen('tablet') {
+      width: calc(60% + 2 * #{$gutter});
+    }
+  }
+
+  &-overlay {
+    background-color: transparentize($text, 0.4);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+}

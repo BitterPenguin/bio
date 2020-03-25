@@ -5,6 +5,14 @@ let mutations = {
   
   setHeader(state, data) {
     state.header = data
+  },
+
+  setHeaderColor(state, data) {
+    state.headerColor = data
+  },
+  
+  setModules(state, data) {
+    state.modules = data
   }
 }
 

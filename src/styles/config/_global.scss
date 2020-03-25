@@ -1,0 +1,11 @@
+[animateup] {
+  opacity: 0;
+  position: relative;
+  top: calcRem(20px);
+  transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+  &.animated {
+    opacity: 1;
+    top: 0;
+  }
+}

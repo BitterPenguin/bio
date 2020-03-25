@@ -1,0 +1,10 @@
+body {
+  background-color: $background;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+#Main {
+  padding-bottom: $padding;
+  position: relative;
+}

@@ -1,0 +1,11 @@
+.Quote {
+  h1 {
+    margin: 0 auto;
+    max-width: 100%;
+    text-align: center;
+
+    @include screen('tablet') {
+      max-width: 60%;
+    }
+  }
+}

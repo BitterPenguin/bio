@@ -1,0 +1,48 @@
+@function calcRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+$mobile-sm: calcRem(375px);
+$mobile: calcRem(768px);
+$tablet: calcRem(1025px);
+$desktop: calcRem(1400px);
+
+@mixin font($family) {
+  font-family: $family;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin screen($size, $type: min) {
+  @if $size == 'small' {
+    @media screen and ($type + -width: $mobile-sm) {
+      @content;
+    }
+  }
+  @else if $size == 'mobile' {
+    @media screen and ($type + -width: $mobile) {
+      @content;
+    }
+  }
+  @else if $size == 'tablet' {
+    @media screen and ($type + -width: $tablet) {
+      @content;
+    }
+  }
+ @else if $size == 'desktop' {
+    @media screen and ($type + -width: $desktop) {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}
+
+@mixin inputPlaceholder() {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
