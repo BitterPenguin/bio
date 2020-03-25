@@ -3,20 +3,26 @@
     <img :src="hero.image.url" class="Hero__image">
     <div class="Hero__content">
         <h1
+          animateup
           v-if="hero.header[0].text"
-          :style="{color: hero.text_color}">
+          :style="{color: hero.text_color}"
+          class="animateup">
             {{hero.header[0].text}}
         </h1>
 
         <p
+          animateup
           v-if="hero.content[0].text"
-          :style="{color: hero.text_color}">
+          :style="{color: hero.text_color}"
+          class="animateup">
             {{hero.content[0].text}}
         </p>
         <a
+          animateup
           v-if="hero.link_url.url && hero.link_text"
           :href="hero.link_url.url"
-          :style="{'--textColorVar': hero.text_color}">
+          :style="{'--textColorVar': hero.text_color}"
+          class="animateup">
             {{hero.link_text}}
         </a>
     </div>

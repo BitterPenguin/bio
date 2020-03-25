@@ -1,5 +1,5 @@
 <template>
-  <header class="Header">
+  <header class="Header" :class="scrollState">
     <nav>
       <ul class="Header__menu" role="menubar" aria-label="Main navigation">
         <li v-for="item in primaryNavigation" :key="item.link_title" class="Header__menu-item" role="none">
@@ -25,7 +25,8 @@ export default {
       'primaryNavigation',
       'primaryNavigationColor'
     ])
-  }
+  },
+  props: ['scrollState']
 }
 </script>
 

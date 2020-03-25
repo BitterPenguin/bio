@@ -52,7 +52,7 @@ h3, .h3, .subheader {
 
 p {
   font-size: calcRem(14px);
-  line-height: calcRem(20px);
+  line-height: calcRem(24px);
 
   &.quote {
     @extend h1;
@@ -66,13 +66,15 @@ p {
 }
 
 a {
+  @extend p;
   color: $text;
   position: relative;
   text-decoration: none;
+  text-transform: uppercase;
 
   &:after,
   &:before {
-    bottom: 0;
+    bottom: -2px;
     content: '';
     display: block;
     height: 1px;

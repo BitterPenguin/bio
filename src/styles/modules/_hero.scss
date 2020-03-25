@@ -11,13 +11,19 @@
   }
 
   &__image {
-    bottom: 0;
-    left: 0;
+    height: 100%;
+    left: 50%;
     min-height: 100%;
     min-width: 100%;
     position: absolute;
-    right: 0;
-    top: 0;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: all 0.3s ease-in-out;
+    width: auto;
+
+    @include screen('tablet') {
+      height: auto;
+    }
   }
 
   &__content {
@@ -25,6 +31,7 @@
     left: $gutter;
     max-width: calc(100% - 2 * #{$gutter});
     position: absolute;
+    transition: max-width 0.3s ease-in-out;
     z-index: 1;
 
     a {
@@ -32,7 +39,12 @@
       padding-top: $gutter/4;  
     }
 
+    @include screen('mobile') {
+      max-width: calc(60% - 2 * #{$gutter});
+    }
+
     @include screen('tablet') {
+      left: initial;
       max-width: 400px;
       right: $padding;
     }

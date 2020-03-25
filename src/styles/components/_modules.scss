@@ -1,7 +1,8 @@
 .module {
   margin: 0 auto;
   max-width: 1600px;
-  padding: $padding $gutter 0;
+  padding: 2*$gutter $gutter 0;
+  position: relative;
   transition: padding 0.3s ease-in-out;
 
   @include screen('tablet') {

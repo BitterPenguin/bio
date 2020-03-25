@@ -1,5 +1,5 @@
 <template>
-  <div v-html="data.primary.soundcloud_embed_code" class="module"></div>
+  <div animateup v-html="data.primary.soundcloud_embed_code" class="animateup"></div>
 </template>
 
 <script>
